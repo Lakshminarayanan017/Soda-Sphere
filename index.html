@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>COCACOLA</title>
+</head>
+<body>
+    <style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+   body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:linear-gradient(black,#333);
+   }
+   .card{
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+   
+   .card .circle{
+    position: relative;
+    width: 100%;;
+    height: 100%;
+    background: transparent;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+     .card .circle::before{
+         content:'';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        border: 15px solid var(--clr);
+        background: transparent;
+        transition: 0.5s;
+        transition-delay: 0.75s,1s;
+        filter: drop-shadow(0 0 100px var(--clr)) drop-shadow(0 0 100px var(--clr));
+     }
+
+     .card:hover{
+         width: 600px;
+         transition-delay: 0.5s;
+     }
+
+     .card:hover .circle::before{
+         width: 100%;
+         height: 100%;
+         height:300px;
+         background: crimson;
+         border-radius:50px ;
+         transition-delay:0.5s;
+         transition: 0.5s;
+         
+         
+     }
+     .card:hover .circle .logo{
+         transform: scale(0);
+         transition-delay: 0s;
+}
+.card .circle .logo{
+    position: relative;
+    width: 300px;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+.card .product_img{
+    transform: translate(-50%,-50%) scale(0) rotate(320deg);
+    position:absolute;
+    top:50%;
+    left:50%;
+    transition:0.5s;
+    height: 300px;
+}
+.card:hover .product_img{
+    transform: translate(-50%,-50%) scale(1) rotate(20deg);
+    top:45%;
+    left:75%;
+    transition-delay: 0.75s;
+    height:500px;
+}
+.card .content{
+    position: absolute;
+    width: 50%;
+    left:20%;
+    padding: 20px 20px 20px 40px;
+    opacity:0;
+    visibility:hidden; 
+}
+.card:hover .content{
+    transition-delay:0.75s;
+    visibility:visible;
+    opacity:1;
+    left: 0;
+    }
+    .card .content h2{
+    
+        text-transform:uppercase;
+        font-size: 2.4em;
+        font-weight: 600;
+        color: #000;
+    }
+.card .content p{
+    color: #fff;
+}
+.card .content button{
+    position: relative;
+    color: #000;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+
+    </style>
+    <div class="card">
+        <div class="circle" style="--clr:crimson;">
+            <img src="images/cocacola_logo.png" alt="" class="logo">
+        </div>
+        <div class="content">
+            <h2>cocacola</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel possimus cumque magnam consequatur illum blanditiis nihil.</p>
+            <button>Export More</button>
+        </div>
+        <img src="images/cocacola.png" alt="" class="product_img">
+    </div>
+       
+
+</body>
+</html>
